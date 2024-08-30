@@ -1,6 +1,41 @@
 <div class="appLogo">
-    <img class="logo" src="../assets/logo.png">
+  <img class="logo" src="../assets/logo.png" />
 </div>
 <div>
-    <p class="title">Seller Log In</p>
+  <p class="title">Seller Log In</p>
+</div>
+<div class="loginCard">
+  <mat-card>
+    <mat-card-title></mat-card-title>
+    <mat-card-content>
+      <form formGroup="form" ngSubmit="submit()">
+        <div>
+          <mat-form-field>
+            <input
+              type="text"
+              matInput
+              placeholder="Username"
+              formControlName="username"
+            />
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field>
+            <input
+              type="password"
+              matInput
+              placeholder="Password"
+              formControlName="password"
+            />
+          </mat-form-field>
+        </div>
+
+        <div class="button">
+          <button type="submit" mat-button>Login</button>
+        </div>
+        <a href="/sellerregister">New User? Click here to Register</a>
+      </form>
+    </mat-card-content>
+  </mat-card>
 </div>
