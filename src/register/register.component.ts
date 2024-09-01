@@ -3,26 +3,30 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatInputModule } from '@angular/material/input';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AuthService } from '../Auth/auth.service';
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [MatGridListModule, MatCardModule, MatInputModule, MatButtonModule],
+  imports: [MatGridListModule, MatCardModule, MatInputModule, MatButtonModule, FormsModule, ReactiveFormsModule],
   templateUrl: './register.component.html',
   styleUrl: './register.component.scss'
 })
 export class RegisterComponent {
-  form: FormGroup = new FormGroup({
-    username: new FormControl(''),
-    password: new FormControl(''),
-  });
+  
+  
+  
+  constructor(private authService: AuthService, private formBuilder: FormBuilder,){}
+  
+  registerData = this.formBuilder.group({
+    username: '',
+    u_password: '',
+  })  ;
 
-  submit() {
-    // if (this.form.valid) {
-    //   this.submitEM.emit(this.form.value);
-    // }
-    console.log(this.form.value);
+  onRegister(): void {
+    console.log(this.registerData.value);
+    this.authService.register(this.registerData.value);
   }
 
 }
