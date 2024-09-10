@@ -4,6 +4,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -18,11 +19,16 @@ export class LoginComponent {
     password: new FormControl(''),
   });
 
+  constructor(private router : Router){}
+
   submit() {
     // if (this.form.valid) {
     //   this.submitEM.emit(this.form.value);
     // }
     console.log(this.form.value);
+  }
+  toHome(){
+      this.router.navigateByUrl('');
   }
  
 }

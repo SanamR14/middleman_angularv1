@@ -1,22 +1,26 @@
-mat-grid-tile {
-  background: white;
-  width: 100px;
-}
-.loginCard{
-    display: flex;
-    justify-content: center;
-}
-.mat-form-field {
-  width: 100%;
-  min-width: 300px;
-}
-
-mat-card-content {
+.loginCard {
   display: flex;
   justify-content: center;
 }
 
-.button {
-  display: flex;
-  justify-content: flex-end;
+.mat-mdc-form-field {
+  width: 100%;
+  min-width: 300px;
 }
+mat-card {
+  width: 30%;
+  border-radius: 6px;
+  height: 20rem;
+}
+
+.registerLink {
+  margin-top: 10px;
+  font-size: x-small;
+}
+.forgotLink {
+  font-size: xx-small;
+  margin-left: 5px;
+}
+// .mat-mdc-form-field-subscript-wrapper {
+//   display: none !important;
+// }
