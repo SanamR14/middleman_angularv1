@@ -1,0 +1,9 @@
+{
+  "routes": [
+    "/",
+    "/login",
+    "/register",
+    "/sellerlogin",
+    "/sellerregister"
+  ]
+}
