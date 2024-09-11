@@ -1,0 +1,121 @@
+<div class="appLogo">
+  <img class="logo" (click)="toHome()" src="../assets/logo.png"/>
+</div>
+<div>
+  <p class="title">Register</p>
+</div>
+<div class="registerCard">
+  <mat-card>
+    <mat-card-title></mat-card-title>
+    <mat-card-content>
+      <form [formGroup]="registerData" (ngSubmit)="onRegister()">
+        <div>
+          <mat-form-field>
+            <input
+              type="email"
+              matInput
+              placeholder="Email"
+              id="email"
+              formControlName="email"
+            />
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field>
+            <input
+              type="text"
+              matInput
+              placeholder="Name"
+              id="username"
+              formControlName="username"
+            />
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field>
+            <input
+              type="password"
+              matInput
+              placeholder="Password"
+              id="u_Password"
+              formControlName="u_Password"
+            />
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field>
+            <input
+              type="password"
+              matInput
+              placeholder="Conform Password"
+              id="c_Password"
+              formControlName="c_Password"
+            />
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field>
+            <textarea
+              type="address"
+              matInput
+              placeholder="Address"
+              id="address"
+              formControlName="address"
+            >
+            </textarea>
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field appearance="fill">
+            <mat-label>Select State</mat-label>
+            <mat-select
+              (selectionChange)="onStateChange()"
+              id="state"
+              formControlName="state"
+            >
+              <mat-option *ngFor="let state of states" [value]="state.name">
+                {{ state.name }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field appearance="fill">
+            <mat-label>Select City</mat-label>
+            <mat-select id="city" formControlName="city">
+              <mat-option *ngFor="let city of cities" [value]="city">
+                {{ city }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field>
+            <input
+              type="text"
+              matInput
+              placeholder="Pincode"
+              id="pincode"
+              formControlName="pincode"
+            />
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field>
+            <input
+              type="contact"
+              matInput
+              placeholder="Contact"
+              id="contact"
+              formControlName="contact"
+            />
+          </mat-form-field>
+        </div>
+        <div class="button">
+          <button type="submit" mat-button>Register</button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

@@ -1,0 +1,7 @@
+{
+    "api": {
+        "target": "https://localhost:7247/api/Register/",
+        "secure": false,
+        "logLevel": "debug"
+    }
+}

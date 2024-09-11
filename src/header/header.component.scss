@@ -1,0 +1,17 @@
+
+.header {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .logo,
+  .login,
+  .sell{
+    display: inline-block;
+  }
+  
+  .appLogo,
+  .actionButtons {
+    display: inline-block;
+    align-content: center;
+  }
