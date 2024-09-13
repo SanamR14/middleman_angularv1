@@ -8,10 +8,17 @@
   .login,
   .sell{
     display: inline-block;
+    margin-right: 2rem;
   }
   
   .appLogo,
   .actionButtons {
     display: inline-block;
     align-content: center;
+  }
+  .login{
+    background-color: #80808052;
+  }
+  .sell{
+    text-decoration-line: none;
   }

@@ -88,3 +88,38 @@ mat-card-content {
     background-color: #80808052;
   }
 }
+.header {
+  margin: 1rem 0 1rem 0;
+}
+@media only screen and (min-device-width: 340px) and (max-device-width: 540px) {
+  .logo {
+    width: 3rem;
+  }
+  .login {
+    font-size: x-small !important;
+    height: auto !important;
+    margin-right: 1rem !important;
+  }
+  .sell {
+    font-size: x-small;
+    margin-right: 1rem !important;
+  }
+  .header {
+    margin: 0.5rem 0 0.5rem 0;
+  }
+
+  .searchBox {
+    width: auto !important;
+    font-size: x-small !important;
+  }
+  .searchInput {
+    height: auto !important;
+  }
+  .mdc-text-field--filled {
+    height: 40px !important;
+  }
+  .mdc-text-field--no-label .mat-mdc-form-field-infix {
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+  }
+}
