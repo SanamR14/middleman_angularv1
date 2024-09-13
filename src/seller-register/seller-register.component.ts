@@ -23,14 +23,15 @@ export class SellerRegisterComponent {
   
   registerData = this.formBuilder.group({
     email: ['', [Validators.required, Validators.email]], 
-    username: ['', [Validators.required, Validators.minLength(3)]], 
-    u_Password: ['', [Validators.required, Validators.minLength(8)]], 
+    S_Username: ['', [Validators.required, Validators.minLength(3)]], 
+    S_Password: ['', [Validators.required, Validators.minLength(8)]], 
     c_Password: ['', [Validators.required]], 
     address: ['', [Validators.required]], 
     state: ['', [Validators.required]], 
     city: ['', [Validators.required]], 
     pincode: ['', [Validators.required, Validators.pattern('^[0-9]{6}$')]], 
-    contact: ['', [Validators.required, Validators.pattern('^[0-9]{10}$')]] 
+    contact: ['', [Validators.required, Validators.pattern('^[0-9]{10}$')]],
+    category: ['', [Validators.required]], 
   }, { validator: this.passwordMatchValidator });
 
   passwordMatchValidator(form: FormGroup) {
@@ -73,7 +74,7 @@ export class SellerRegisterComponent {
   selectedState: string = '';
   cities: string[] = [];
   selectedCity: string = '';
-
+  categories = ["Home-made","Agricultural","small-scale","Hand-made","Other"]
   onStateChange() {
     console.log(this.registerData.value.state);
     this.cities = this.states.find(state => state.name === this.registerData.value.state)?.cities || [];

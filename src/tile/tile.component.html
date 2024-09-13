@@ -1,8 +1,37 @@
-<mat-grid-list cols="3" rowHeight="1:1" [gutterSize]="'1rem'">
-    <mat-grid-tile>1</mat-grid-tile>
-    <mat-grid-tile>2</mat-grid-tile>
-    <mat-grid-tile>3</mat-grid-tile>
-    <mat-grid-tile>4</mat-grid-tile>
-    <mat-grid-tile>5</mat-grid-tile>
-    <mat-grid-tile>6</mat-grid-tile>
-  </mat-grid-list>
+<!-- <mat-grid-list cols="3" rowHeight="350px" [gutterSize]="'1rem'">
+    <mat-grid-tile *ngFor="let tile of tiles" class="tile">
+     
+        <img class="tileImage" src="{{tile.image}}" alt="{{tile.productName}}">
+
+    </mat-grid-tile>
+    
+  </mat-grid-list> -->
+
+<div class="content">
+  <div fxLayout="row wrap" fxLayoutGap="16px grid" >
+    <div
+      fxFlex="25%"
+      fxFlex.xs="100%"
+      fxFlex.sm="33%"
+      *ngFor="let tile of tiles"
+    >
+      <mat-card class="mat-elevation-z4">
+        <mat-card-header>
+          <mat-card-title>{{ tile.productName }}</mat-card-title>
+        </mat-card-header>
+        <img
+          class="tileImage"
+          src="{{ tile.image }}"
+          alt="{{ tile.productName }}"
+        />
+        <mat-card-content>
+          <p>{{ tile.description }}</p>
+        </mat-card-content>
+        <!-- <mat-card-actions>
+            <button mat-button>LIKE</button>
+            <button mat-button>SHARE</button>
+          </mat-card-actions> -->
+      </mat-card>
+    </div>
+  </div>
+</div>

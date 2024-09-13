@@ -1,7 +1,22 @@
 mat-grid-tile {
     background: white;
+   
 }
 mat-grid-list {
   margin-left: 1rem;
   margin-right: 1rem;
+}
+.content {
+  padding: 16px;
+}
+
+.content > mat-card {
+  margin-bottom: 16px;
+}
+
+.tileImage{
+  height: 18rem;
+}
+ mat-card {
+  height: 30rem;
 }
