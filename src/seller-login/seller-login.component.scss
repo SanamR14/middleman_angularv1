@@ -1,23 +1,54 @@
-mat-grid-tile {
-    background: white;
-    width: 100px;
+.loginCard {
+  display: flex;
+  justify-content: center;
+}
+
+.mat-mdc-form-field {
+  width: 100%;
+  // min-width: 300px;
+}
+mat-card {
+  width: 30%;
+  border-radius: 6px;
+  height: 20rem;
+}
+
+.registerLink {
+  margin-top: 10px;
+  margin-left: 5px;
+  font-size: x-small;
+}
+.forgotLink {
+  font-size: xx-small;
+  margin-left: 5px;
+}
+// .mat-mdc-form-field-subscript-wrapper {
+//   display: none !important;
+// }
+.pwd, .btnLogin{
+  margin-top: 1rem;
+}
+  ::ng-deep .mat-mdc-form-field-subscript-wrapper{
+      display: none ;
+    }
+
+@media only screen and (min-device-width: 340px) and (max-device-width: 540px) {
+  mat-card {
+    width: 80%;
+    border-radius: 6px;
+    height: 20rem;
   }
-  .loginCard{
-      display: flex;
-      justify-content: center;
+  input {
+    font-size: x-small !important;
   }
-  .mat-form-field {
-    width: 100%;
-    min-width: 300px;
+  .btnLogin{
+    font-size: x-small !important;
+    height: max-content;
   }
-  
-  mat-card-content {
-    display: flex;
-    justify-content: center;
+  .forgotLink{
+    font-size: xxx-small;
   }
-  
-  .button {
-    display: flex;
-    justify-content: flex-end;
+  .registerLink{
+    font-size: xx-small;
   }
-  
+}

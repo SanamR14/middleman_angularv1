@@ -5,7 +5,7 @@
 
 .mat-mdc-form-field {
   width: 100%;
-  min-width: 300px;
+  // min-width: 300px;
 }
 mat-card {
   width: 30%;
@@ -15,6 +15,7 @@ mat-card {
 
 .registerLink {
   margin-top: 10px;
+  margin-left: 5px;
   font-size: x-small;
 }
 .forgotLink {
@@ -24,3 +25,30 @@ mat-card {
 // .mat-mdc-form-field-subscript-wrapper {
 //   display: none !important;
 // }
+.pwd, .btnLogin{
+  margin-top: 1rem;
+}
+  ::ng-deep .mat-mdc-form-field-subscript-wrapper{
+      display: none ;
+    }
+
+@media only screen and (min-device-width: 340px) and (max-device-width: 540px) {
+  mat-card {
+    width: 80%;
+    border-radius: 6px;
+    height: 20rem;
+  }
+  input {
+    font-size: x-small !important;
+  }
+  .btnLogin{
+    font-size: x-small !important;
+    height: max-content;
+  }
+  .forgotLink{
+    font-size: xxx-small;
+  }
+  .registerLink{
+    font-size: xx-small;
+  }
+}

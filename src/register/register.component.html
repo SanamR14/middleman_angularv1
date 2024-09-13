@@ -1,5 +1,5 @@
 <div class="appLogo">
-  <img class="logo" (click)="toHome()" src="../assets/logo.png" />
+  <img class="logo" (click)="toHome()" src="../assets/logo.png" (click)="toHome()"/>
 </div>
 <div>
   <p class="title">Register</p>
@@ -173,7 +173,7 @@
           </mat-form-field>
         </div>
         <div class="button">
-          <button type="submit" mat-button [disabled]="registerData.invalid">
+          <button type="submit" class="regBtn" mat-button [disabled]="registerData.invalid">
             Register
           </button>
         </div>

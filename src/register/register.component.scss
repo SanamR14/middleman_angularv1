@@ -6,9 +6,24 @@
 
 .mat-mdc-form-field {
   width: 100%;
-  min-width: 300px;
+  height: fit-content;
 }
 mat-card {
   width: 50%;
   border-radius: 6px;
+}
+@media only screen and (min-device-width: 340px) and (max-device-width: 540px) {
+  mat-card {
+    width: 80%;
+    border-radius: 6px;
+    height: fit-content;
+  }
+  input, textarea, mat-label , mat-option, mat-select{
+    font-size: x-small !important;
+  }
+  .regBtn{
+    font-size: x-small !important;
+    height: max-content;
+  }
+
 }
