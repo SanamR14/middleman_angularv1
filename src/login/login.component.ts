@@ -3,29 +3,26 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatCardModule} from '@angular/material/card';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
-import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { FormBuilder, FormsModule, ReactiveFormsModule, FormGroup, Validators, FormGroupDirective } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [MatGridListModule, MatCardModule, MatInputModule, MatButtonModule],
+  imports: [MatGridListModule, MatCardModule, MatInputModule, MatButtonModule, FormsModule, ReactiveFormsModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
 export class LoginComponent {
-  form: FormGroup = new FormGroup({
-    username: new FormControl(''),
-    password: new FormControl(''),
+  loginForm = this.formBuilder.group({
+    email: "",
+    password: "",
   });
 
-  constructor(private router : Router){}
+  constructor(private router : Router,private formBuilder: FormBuilder){}
 
   submit() {
-    // if (this.form.valid) {
-    //   this.submitEM.emit(this.form.value);
-    // }
-    console.log(this.form.value);
+    alert("System development on progress. Please try after some time. Thank you for understanding");
   }
   toHome(){
       this.router.navigateByUrl('');

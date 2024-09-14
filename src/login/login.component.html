@@ -8,7 +8,7 @@
   <mat-card>
     <mat-card-title></mat-card-title>
     <mat-card-content>
-      <form formGroup="form" ngSubmit="submit()">
+      <form [formGroup]="loginForm" (ngSubmit)="submit()">
         <mat-form-field>
           <input
             type="text"
@@ -31,7 +31,7 @@
           <a href="/">Forgot Password?</a>
         </div>
         <div class="button">
-          <button type="submit" mat-button class="btnLogin">Login</button>
+          <button type="submit" mat-button class="btnLogin" >Login</button>
         </div>
         <div class="registerLink">
           <a href="/register">New User? Click here to Register</a>

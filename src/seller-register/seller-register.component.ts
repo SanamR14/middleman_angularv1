@@ -3,7 +3,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatInputModule } from '@angular/material/input';
-import { FormBuilder, FormsModule, ReactiveFormsModule, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormsModule, ReactiveFormsModule, FormGroup, Validators, FormGroupDirective } from '@angular/forms';
 import { AuthService } from '../Auth/auth.service';
 import { MatSelectModule } from '@angular/material/select';
 import { NgFor, NgIf } from '@angular/common';
@@ -35,7 +35,7 @@ export class SellerRegisterComponent {
   }, { validator: this.passwordMatchValidator });
 
   passwordMatchValidator(form: FormGroup) {
-    const password = form.get('u_Password')?.value;
+    const password = form.get('S_Password')?.value;
     const confirmPassword = form.get('c_Password')?.value;
     return password === confirmPassword ? null : { passwordMismatch: true };
   }
@@ -80,14 +80,17 @@ export class SellerRegisterComponent {
     this.cities = this.states.find(state => state.name === this.registerData.value.state)?.cities || [];
     this.registerData.value.city = '';
   }
-  onRegister(): void {
-    if (this.registerData.valid) {
-    this.authService.register(this.registerData.value);
+  onRegister(formDirective: FormGroupDirective): void {
+    // if (this.registerData.valid) {
+    // this.authService.register(this.registerData.value);
+    // this.registerData.reset();
+    // }
+    // else{
+    //   this.registerData.markAllAsTouched();
+    // }
+    formDirective.resetForm();
     this.registerData.reset();
-    }
-    else{
-      this.registerData.markAllAsTouched();
-    }
+    alert("System development on progress. Please try after some time. Thank you for understanding");
   }
 
   toHome(){

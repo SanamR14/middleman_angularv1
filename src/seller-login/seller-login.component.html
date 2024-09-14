@@ -1,5 +1,5 @@
 <div class="appLogo">
-  <img class="logo" src="../assets/logo.png" (click)="toHome()"/>
+  <img class="logo" src="../assets/logo.png" (click)="toHome()" />
 </div>
 <div>
   <p class="title">Seller Log In</p>
@@ -8,7 +8,7 @@
   <mat-card>
     <mat-card-title></mat-card-title>
     <mat-card-content>
-      <form formGroup="form" ngSubmit="submit()">
+      <form [formGroup]="sellerLoginForm" (ngSubmit)="submit()">
         <mat-form-field>
           <input
             type="text"
@@ -26,7 +26,7 @@
             formControlName="password"
           />
         </mat-form-field>
- 
+
         <div class="forgotLink">
           <a href="/">Forgot Password?</a>
         </div>

@@ -3,7 +3,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatInputModule } from '@angular/material/input';
-import { FormBuilder, FormsModule, ReactiveFormsModule, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormsModule, ReactiveFormsModule, FormGroup, Validators, FormGroupDirective } from '@angular/forms';
 import { AuthService } from '../Auth/auth.service';
 import { MatSelectModule } from '@angular/material/select';
 import { NgFor, NgIf } from '@angular/common';
@@ -80,9 +80,10 @@ export class RegisterComponent {
     this.cities = this.states.find(state => state.name === this.registerData.value.state)?.cities || [];
     this.registerData.value.city = '';
   }
-  onRegister(): void {
+  onRegister(formDirective: FormGroupDirective): void {
     if (this.registerData.valid) {
     this.authService.register(this.registerData.value);
+   formDirective.resetForm();
     this.registerData.reset();
     }
     else{

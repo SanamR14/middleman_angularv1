@@ -10,9 +10,17 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   register(userData: any) {
+   
     const headers = new HttpHeaders({'accept': '*/*', 'Content-Type': 'application/json'});
-    this.http.post('https://localhost:7247/api/Register/Consumer', userData, { headers, responseType: 'text' }).subscribe((data) => {
-      alert(data);
-    })
+      this.http.post('https://localhost:7247/api/Register/Consumer', userData, { headers, responseType: 'text' }).subscribe((data) => {
+        alert(data);
+      },
+      (error) => {
+        alert("System development on progress. Please try after some time. Thank you for understanding");
+      }
+)
+    
+      
+    
   }
 }
