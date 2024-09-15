@@ -1,6 +1,5 @@
 mat-grid-tile {
-    background: white;
-   
+  background: white;
 }
 mat-grid-list {
   margin-left: 1rem;
@@ -14,9 +13,29 @@ mat-grid-list {
   margin-bottom: 16px;
 }
 
-.tileImage{
-  height: 18rem;
+.tileImage {
+  height: 15rem;
 }
- mat-card {
-  height: 30rem;
+mat-card {
+  height: auto;
+}
+.header {
+  justify-content: space-between;
+  padding: 0;
+}
+.titleName,
+.titleIcon {
+  display: inline-block;
+  align-content: center;
+}
+.icon {
+  display: inline-block;
+  margin-right: 1rem;
+}
+.mdc-card__actions {
+justify-content: flex-end;
+}
+.mat-mdc-card-content {
+  padding: 0;
+  margin: 6px 0 6px 6px;
 }

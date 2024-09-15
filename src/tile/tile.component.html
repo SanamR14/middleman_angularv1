@@ -8,7 +8,7 @@
   </mat-grid-list> -->
 
 <div class="content">
-  <div fxLayout="row wrap" fxLayoutGap="16px grid" >
+  <div fxLayout="row wrap" fxLayoutGap="16px grid">
     <div
       fxFlex="25%"
       fxFlex.xs="100%"
@@ -16,21 +16,29 @@
       *ngFor="let tile of tiles"
     >
       <mat-card class="mat-elevation-z4">
-        <mat-card-header>
-          <mat-card-title>{{ tile.productName }}</mat-card-title>
+        <mat-card-header class="header">
+          <!-- <div class="titleName">
+            <mat-card-title>{{ tile.product }}</mat-card-title>
+          </div> -->
+          <div class="titleIcon">
+            <mat-icon class="icon">bookmark_border</mat-icon>
+          </div>
         </mat-card-header>
         <img
           class="tileImage"
           src="{{ tile.image }}"
-          alt="{{ tile.productName }}"
+          alt="{{ tile.product }}"
         />
         <mat-card-content>
-          <p>{{ tile.description }}</p>
+          <p><b>{{ tile.productName }}</b></p>
+          <div >
+            <h3>Price per Unit: Rs. {{tile.price}} /-</h3>
+          </div>
         </mat-card-content>
-        <!-- <mat-card-actions>
-            <button mat-button>LIKE</button>
-            <button mat-button>SHARE</button>
-          </mat-card-actions> -->
+        <mat-card-actions>
+          <!-- <button mat-button>LIKE</button> -->
+          <button mat-button>Add to Basket</button>
+        </mat-card-actions>
       </mat-card>
     </div>
   </div>
