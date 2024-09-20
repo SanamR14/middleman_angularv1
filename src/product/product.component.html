@@ -1,0 +1,6 @@
+<div *ngIf="selectedProduct">
+  <h2>{{ selectedProduct.productName }}</h2>
+  <img [src]="selectedProduct.image" alt="{{ selectedProduct.productName }}" class="image"/>
+  <p>{{ selectedProduct.description }}</p>
+  <p>Price: Rs.{{ selectedProduct.price }} </p>
+</div>
