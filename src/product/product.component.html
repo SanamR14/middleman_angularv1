@@ -1,3 +1,7 @@
+
+<div class="header">
+  <app-header [userName]="true" [user]="true"></app-header>
+</div>
 <div *ngIf="selectedProduct">
   <h2>{{ selectedProduct.productName }}</h2>
   <img [src]="selectedProduct.image" alt="{{ selectedProduct.productName }}" class="image"/>

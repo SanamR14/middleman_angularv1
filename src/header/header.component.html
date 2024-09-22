@@ -1,11 +1,13 @@
 <div class="header">
     <div class="appLogo">
-        <img class="logo" src="../assets/logo.png">
+        <img class="logo" src="../assets/logo.png" (click)="toHome()">
     </div>
     <div class="actionButtons">
-        <button mat-stroked-button class="login" (click)="toLoginPage()" mat-button>Login</button>
+        <button *ngIf="login" mat-stroked-button class="login" (click)="toLoginPage()" mat-button>Login</button>
+        <div *ngIf="userName" class="userName"><h3>User Name</h3></div>
         <!-- <mat-divider class="divider" [vertical]="true"></mat-divider> -->
-        <a href="/sellerlogin" class="sell">Want to sell? </a>
+        <a *ngIf="sell" href="/sellerlogin" class="sell">Want to sell? </a>
+        <mat-icon *ngIf="user" class="user">account_circle</mat-icon>
     </div>
 </div>
-<mat-divider></mat-divider>
+<mat-divider *ngIf="divider"></mat-divider>

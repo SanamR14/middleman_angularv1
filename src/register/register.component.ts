@@ -8,11 +8,12 @@ import { AuthService } from '../Auth/auth.service';
 import { MatSelectModule } from '@angular/material/select';
 import { NgFor, NgIf } from '@angular/common';
 import { Router } from '@angular/router';
+import { HeaderComponent } from '../header/header.component';
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [MatGridListModule, MatCardModule, MatInputModule, MatButtonModule, FormsModule, ReactiveFormsModule, MatSelectModule,NgFor,NgIf],
+  imports: [HeaderComponent,MatGridListModule, MatCardModule, MatInputModule, MatButtonModule, FormsModule, ReactiveFormsModule, MatSelectModule,NgFor,NgIf],
   templateUrl: './register.component.html',
   styleUrl: './register.component.scss'
 })
@@ -90,8 +91,4 @@ export class RegisterComponent {
       this.registerData.markAllAsTouched();
     }
   }
-
-  toHome(){
-    this.router.navigateByUrl('');
-}
 }

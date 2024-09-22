@@ -8,11 +8,12 @@ import { AuthService } from '../Auth/auth.service';
 import { MatSelectModule } from '@angular/material/select';
 import { NgFor, NgIf } from '@angular/common';
 import { Router } from '@angular/router';
+import { HeaderComponent } from '../header/header.component';
 
 @Component({
   selector: 'app-seller-register',
   standalone: true,
-  imports: [MatGridListModule, MatCardModule, MatInputModule, MatButtonModule, FormsModule, ReactiveFormsModule, MatSelectModule,NgFor,NgIf],
+  imports: [HeaderComponent, MatGridListModule, MatCardModule, MatInputModule, MatButtonModule, FormsModule, ReactiveFormsModule, MatSelectModule,NgFor,NgIf],
   templateUrl: './seller-register.component.html',
   styleUrl: './seller-register.component.scss'
 })
@@ -92,8 +93,4 @@ export class SellerRegisterComponent {
     this.registerData.reset();
     alert("System development on progress. Please try after some time. Thank you for understanding");
   }
-
-  toHome(){
-    this.router.navigateByUrl('');
-}
 }
