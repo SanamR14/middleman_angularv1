@@ -2,8 +2,10 @@
   "routes": [
     "/",
     "/login",
+    "/productDetails",
     "/register",
     "/sellerlogin",
-    "/sellerregister"
+    "/sellerregister",
+    "/user"
   ]
 }
