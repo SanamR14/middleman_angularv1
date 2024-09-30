@@ -1,5 +1,5 @@
-import { NgFor } from '@angular/common';
-import { Component } from '@angular/core';
+import { NgFor, NgIf } from '@angular/common';
+import { Component, Input } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import {MatGridListModule} from '@angular/material/grid-list';
@@ -12,7 +12,7 @@ import { ProductService } from '../product/product.service';
 @Component({
   selector: 'app-tile',
   standalone: true,
-  imports: [MatGridListModule,NgFor,MatCardModule,MatButtonModule,FlexLayoutModule,MatIcon],
+  imports: [MatGridListModule,NgFor,MatCardModule,MatButtonModule,FlexLayoutModule,MatIcon,NgIf],
   templateUrl: './tile.component.html',
   styleUrl: './tile.component.scss'
 })
@@ -20,6 +20,8 @@ import { ProductService } from '../product/product.service';
 
 export class TileComponent {
 
+  @Input() product = false;
+  
   gridColumns = 3;
   constructor(private productService: ProductService, private router: Router){}
 

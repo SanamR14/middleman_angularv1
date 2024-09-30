@@ -1,10 +1,27 @@
-
 <div class="header">
   <app-header [userName]="true" [user]="true"></app-header>
 </div>
-<div *ngIf="selectedProduct">
-  <h2>{{ selectedProduct.productName }}</h2>
-  <img [src]="selectedProduct.image" alt="{{ selectedProduct.productName }}" class="image"/>
-  <p>{{ selectedProduct.description }}</p>
-  <p>Price: Rs.{{ selectedProduct.price }} </p>
+<div *ngIf="selectedProduct" class="product" fxLayout="row">
+  <div class="img">
+    <img
+      [src]="selectedProduct.image"
+      alt="{{ selectedProduct.productName }}"
+      class="image"
+    />
+  </div>
+  <div class="pd">
+    <h2>{{ selectedProduct.productName }}</h2>
+    <p style="text-align: justify">{{ selectedProduct.description }}</p>
+    <p><b>Price:</b> Rs.{{ selectedProduct.price }}</p>
+    <button mat-button (click)="addToBasket(selectedProduct)">
+      Add to Basket
+    </button>
+  </div>
+  <mat-divider></mat-divider>
+  <div class="component">
+    <div style="margin-left: 4rem; font-size: 20px">
+      <b>Popular Products</b>
+    </div>
+    <app-tile [product]="true"></app-tile>
+  </div>
 </div>

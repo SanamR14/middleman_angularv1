@@ -1,3 +1,31 @@
 .image{
-    width: 20%;
+   width: 20rem;
+   height: 20rem;
+}
+.product{
+    display: flex;
+    width: -webkit-fill-available;
+}
+.img{
+    margin: 10px;
+}
+.pd{
+    margin: 10px;
+}
+.component{
+    width: 30%;
+}
+@media only screen and (min-device-width: 340px) and (max-device-width: 670px) {
+.product{
+    display: block;
+}
+.image{
+    width: 10rem;
+    height: 10rem;
+ }
+}
+@media only screen and (device-width: 768px) {
+.middle{
+    width: 60%;
+}
 }
