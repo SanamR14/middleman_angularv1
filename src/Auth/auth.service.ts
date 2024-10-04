@@ -12,7 +12,7 @@ export class AuthService {
   register(userData: any) {
    
     const headers = new HttpHeaders({'accept': '*/*', 'Content-Type': 'application/json'});
-      this.http.post('https://localhost:7247/api/Register/Consumer', userData, { headers, responseType: 'text' }).subscribe((data) => {
+      this.http.post('middlemanapi-gqckcpesbfcaaqcj.uksouth-01.azurewebsites.net/api/Register/Consumer', userData, { headers, responseType: 'text' }).subscribe((data) => {
         alert(data);
       },
       (error) => {
