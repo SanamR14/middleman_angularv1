@@ -9,10 +9,11 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
+  apiUrl = 'https://middlemanapi-gqckcpesbfcaaqcj.uksouth-01.azurewebsites.net/api/Register';
   register(userData: any) {
    
     const headers = new HttpHeaders({'accept': '*/*', 'Content-Type': 'application/json'});
-      this.http.post('middlemanapi-gqckcpesbfcaaqcj.uksouth-01.azurewebsites.net/api/Register/consumer', userData, { headers, responseType: 'text' }).subscribe((data) => {
+      this.http.post(this.apiUrl + '/consumer', userData, { headers, responseType: 'text' }).subscribe((data) => {
         alert(data);
       },
       (error) => {
