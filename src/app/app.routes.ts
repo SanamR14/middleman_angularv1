@@ -6,6 +6,7 @@ import { SellerRegisterComponent } from '../seller-register/seller-register.comp
 import { SellerLoginComponent } from '../seller-login/seller-login.component';
 import { ProductComponent } from '../product/product.component';
 import { UserPageComponent } from '../user-page/user-page.component';
+import { HomeComponent } from '../home/home.component';
 
 export const routes: Routes = [
     {path:'', component: LandingPageComponent},
@@ -14,5 +15,6 @@ export const routes: Routes = [
     {path:'sellerlogin', component: SellerLoginComponent},
     {path:'sellerregister', component: SellerRegisterComponent},
     {path:"productDetails", component:ProductComponent},
-    {path:"user", component:UserPageComponent}
+    {path:"user", component:UserPageComponent},
+    {path:'home', component: HomeComponent}
 ];

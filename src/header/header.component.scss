@@ -15,12 +15,17 @@
   
   .appLogo,
   .actionButtons {
-    display: inline-block;
-    align-content: center;
+    display: flex;
+    align-items: center;
   }
   .login{
     background-color: #80808052;
   }
   .sell{
     text-decoration-line: none;
+  }
+  .userName{
+    font-size: larger;
+    font-family: 'Times New Roman', Times, serif;
+    padding-bottom: 6px;
   }

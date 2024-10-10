@@ -6,6 +6,7 @@ import {MatButtonModule} from '@angular/material/button';
 import { Router } from '@angular/router';
 import { FormBuilder, FormsModule, ReactiveFormsModule, FormGroup, Validators, FormGroupDirective } from '@angular/forms';
 import { HeaderComponent } from '../header/header.component';
+import { AuthService } from '../Auth/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -20,9 +21,10 @@ export class LoginComponent {
     password: "",
   });
 
-  constructor(private router : Router,private formBuilder: FormBuilder){}
+  constructor(private router : Router,private formBuilder: FormBuilder,private authService: AuthService){}
 
   submit() {
-    alert("System development on progress. Please try after some time. Thank you for understanding");
+    this.authService.register([]);
+    //alert("System development on progress. Please try after some time. Thank you for understanding");
   } 
 }

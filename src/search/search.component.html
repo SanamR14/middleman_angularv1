@@ -1,8 +1,23 @@
 
-<div class="search">
+<div *ngIf="!home" class="search">
   <mat-form-field class="searchBox">
       <!-- <mat-icon>search</mat-icon> -->
     <input class="inputBox" matInput placeholder="Search product or brand" >
   </mat-form-field>
 </div>
 
+<div *ngIf="home" class="home">
+  <div  class="home-search">
+    <mat-form-field class="home-searchBox">
+        <!-- <mat-icon>search</mat-icon> -->
+      <input class="inputBox" matInput placeholder="Search product or brand" >
+    </mat-form-field>
+  </div>
+  <div class="actionButtons">
+    <a  href="/sellerlogin" class="filter">Filter </a>
+    <div  class="cart">
+      <mat-icon [matBadge]="badge">shopping_cart</mat-icon>
+    </div>
+
+</div>
+</div>

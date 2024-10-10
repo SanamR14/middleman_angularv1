@@ -1,4 +1,3 @@
-
 <div class="header">
   <app-header [divider]="false"></app-header>
 </div>
@@ -9,7 +8,11 @@
   <mat-card>
     <mat-card-title></mat-card-title>
     <mat-card-content>
-      <form [formGroup]="registerData" #formDirective="ngForm"  (ngSubmit)="onRegister(formDirective)">
+      <form
+        [formGroup]="registerData"
+        #formDirective="ngForm"
+        (ngSubmit)="onRegister(formDirective)"
+      >
         <div>
           <mat-form-field>
             <input
@@ -145,9 +148,7 @@
             >
               Pincode is required
             </mat-error>
-            <mat-error
-              *ngIf="registerData.get('pincode')?.hasError('pattern')"
-            >
+            <mat-error *ngIf="registerData.get('pincode')?.hasError('pattern')">
               Pincode must have only 6 digits
             </mat-error>
           </mat-form-field>
@@ -166,15 +167,18 @@
             >
               Contact is required
             </mat-error>
-            <mat-error
-              *ngIf="registerData.get('contact')?.hasError('pattern')"
-            >
+            <mat-error *ngIf="registerData.get('contact')?.hasError('pattern')">
               Contact must have only 10 digits
             </mat-error>
           </mat-form-field>
         </div>
         <div class="button">
-          <button type="submit" class="regBtn" mat-button [disabled]="registerData.invalid">
+          <button
+            type="submit"
+            class="regBtn"
+            mat-button
+            [disabled]="registerData.invalid"
+          >
             Register
           </button>
         </div>

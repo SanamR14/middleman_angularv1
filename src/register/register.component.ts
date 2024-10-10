@@ -77,7 +77,6 @@ export class RegisterComponent {
   selectedCity: string = '';
 
   onStateChange() {
-    console.log(this.registerData.value.state);
     this.cities = this.states.find(state => state.name === this.registerData.value.state)?.cities || [];
     this.registerData.value.city = '';
   }

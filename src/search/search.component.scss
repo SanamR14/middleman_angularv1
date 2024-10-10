@@ -12,14 +12,15 @@
 .search {
     text-align: center;
 }
+
 .searchBox {
     width: 40%;
     margin-top: 4%;
     margin-bottom: 1%;
-    height: 70px;
+    height: 60px;
 }
 ::ng-deep .mdc-text-field--no-label:not(.mdc-text-field--outlined):not(.mdc-text-field--textarea) .mat-mdc-form-field-infix {
-        padding-top: 12px !important;
+        padding-top: 8px !important;
         padding-bottom: 16px;
 }
 ::ng-deep .mat-form-field {
@@ -29,6 +30,36 @@
   display: none !important;
 }
 
+.home{
+  display: flex;
+  justify-content: space-between;
+}
+.home-search {
+  text-align: left; 
+}
+.home-searchBox {
+  height: 60px;
+  width: 15rem;
+  margin-left: 1rem;
+}
+.home-search{
+  display: flex;
+}
+.actionButtons {
+  display: flex;
+  // align-items: center;
+}
+.inputBox{
+  padding-bottom: 5px;
+}
+.filter,
+.cart{
+  display: inline-block;
+  margin-right: 2rem;
+}
+.filter {
+  text-decoration: none;
+}
 
   @media screen and (max-width: 768px) {
  

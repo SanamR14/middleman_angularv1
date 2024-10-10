@@ -12,10 +12,12 @@
     >
       Login
     </button>
-    <div *ngIf="userName" class="userName"><h3>User Name</h3></div>
+    <div *ngIf="userName" class="userName">User Name</div>
     <!-- <mat-divider class="divider" [vertical]="true"></mat-divider> -->
     <a *ngIf="sell" href="/sellerlogin" class="sell">Want to sell? </a>
-    <mat-icon *ngIf="user" class="user">account_circle</mat-icon>
+    <div *ngIf="user" class="user">
+      <mat-icon >account_circle</mat-icon>
+    </div>
   </div>
 </div>
 <mat-divider *ngIf="divider"></mat-divider>

@@ -9,12 +9,11 @@
 
 <div *ngIf="product" class="content">
   <div
-  style="place-content: center"
-  fxLayout="row wrap"
-  fxLayoutGap="16px grid"
+    style="place-content: center"
+    fxLayout="row wrap"
+    fxLayoutGap="16px grid"
   >
-  
-    <div fxFlex="80%" *ngFor="let tile of tiles">
+    <div fxFlex="80%" *ngFor="let tile of featured">
       <mat-card class="mat-elevation-z4">
         <mat-card-header class="header">
           <!-- <div class="titleName">
@@ -48,7 +47,7 @@
 
 <div *ngIf="!product" class="content">
   <div
-    style="place-content: center; "
+    style="place-content: center"
     fxLayout="row wrap"
     fxLayoutGap="16px grid"
   >
