@@ -23,7 +23,7 @@ export class HeaderComponent {
   constructor(private router : Router){}
 
   ngOnInit(){
-  
+   
   }
   toLoginPage(){
     this.router.navigateByUrl('/login');

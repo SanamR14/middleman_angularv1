@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { FeaturedComponent } from '../featured/featured.component';
 import { SearchComponent } from '../search/search.component';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-product',
@@ -21,10 +22,15 @@ import { SearchComponent } from '../search/search.component';
 export class ProductComponent {
   selectedProduct: Tile | null = null;
   productCount = 0;
+  guest = true;
+  
 
   constructor(private productService: ProductService, private router: Router) {}
 
   ngOnInit() {
+    if(this.router.url == '/home/productDetails'){
+     this.guest = false;
+    }
     // Subscribe to selected product from the service
     this.productService.selectedProduct$.subscribe((product) => {
       this.selectedProduct = product;

@@ -1,5 +1,5 @@
 <div class="header">
-  <app-header [userName]="true" [user]="true"></app-header>
+  <app-header [userName]="!guest" [user]="!guest" [login]="guest" [sell]="guest" ></app-header>
 </div>
 <div class="search">
   <app-search [home]="true" [badge]="productCount"></app-search>

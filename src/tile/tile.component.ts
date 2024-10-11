@@ -6,7 +6,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { MatIcon } from '@angular/material/icon';
 import { Tile } from '../modals/product.modal';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ProductService } from '../product/product.service';
 
 @Component({
@@ -34,17 +34,18 @@ export class TileComponent {
   
   ]
   @Input() product = false;
+ 
   @Input() featured = this.tiles;
 
   gridColumns = 3;
-  constructor(private productService: ProductService, private router: Router){}
+  constructor(private productService: ProductService, private router: Router,private route: ActivatedRoute,){}
 
 
   addToBasket(product: Tile) {
-    let productRoute = product.productName.trim();
+   let productRoute = product.productName.trim();
     this.productService.setSelectedProduct(product);
     // this.router.navigate(['/',productRoute]);
-    this.router.navigate(['/productDetails'])
+    this.router.navigate(['productDetails'],{relativeTo:this.route})
   }
 
 }
