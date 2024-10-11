@@ -24,8 +24,9 @@ export class LoginComponent {
   constructor(private router : Router,private formBuilder: FormBuilder,private authService: AuthService){}
 
   submit() {
-    
-    this.authService.register([]);
-    //alert("System development on progress. Please try after some time. Thank you for understanding");
+
+   // this.authService.register([]);
+   alert("User logged in Successfully")
+   this.router.navigateByUrl('/home');
   } 
 }
