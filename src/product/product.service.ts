@@ -10,10 +10,15 @@ export class ProductService {
   private selectedProductSubject = new BehaviorSubject<Tile | null>(null);
   selectedProduct$ = this.selectedProductSubject.asObservable();
 
+  public cartValueSubject = new BehaviorSubject(0);
+  cartValue$ = this.cartValueSubject.asObservable();
+
+
   constructor() {}
 
   // Method to update the selected product
   setSelectedProduct(product: Tile) {
     this.selectedProductSubject.next(product);
   }
+
 }

@@ -21,8 +21,9 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class ProductComponent {
   selectedProduct: Tile | null = null;
-  productCount = 0;
-  guest = true;
+ 
+   productCount = 0;
+   guest = true;
   
 
   constructor(private productService: ProductService, private router: Router) {}
@@ -37,6 +38,10 @@ export class ProductComponent {
     });
   }
   addToBasket(product: Tile) {
-   this.productCount = this.productCount + 1; 
+    this.productService.setSelectedProduct(product);
+    this.productService.cartValue$.subscribe(value =>{
+      this.productCount = value;
+    })
+    this.productService.cartValueSubject.next(this.productCount +1);
   }
 }

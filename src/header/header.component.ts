@@ -29,6 +29,12 @@ export class HeaderComponent {
     this.router.navigateByUrl('/login');
   }
   toHome(){
-    this.router.navigateByUrl('');
+    let url: string = this.router.url;
+    if(url.includes("/home/")){
+      this.router.navigateByUrl('/home');
+    }
+    else{
+      this.router.navigateByUrl('');
+    }
   }
 }
