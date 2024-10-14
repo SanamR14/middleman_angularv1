@@ -7,11 +7,14 @@ import { Tile } from '../modals/product.modal';
   providedIn: 'root'
 })
 export class ProductService {
-  private selectedProductSubject = new BehaviorSubject<Tile | null>(null);
+  public selectedProductSubject = new BehaviorSubject<Tile | null>(null);
   selectedProduct$ = this.selectedProductSubject.asObservable();
 
   public cartValueSubject = new BehaviorSubject(0);
   cartValue$ = this.cartValueSubject.asObservable();
+
+  public cartProductSubject = new BehaviorSubject<any>([]);
+  cartProduct$ = this.cartProductSubject.asObservable();
 
 
   constructor() {}
@@ -21,4 +24,7 @@ export class ProductService {
     this.selectedProductSubject.next(product);
   }
 
+  // setCartProduct(value:any) {
+  //   this.cartProductSubject.next(value);
+  // }
 }

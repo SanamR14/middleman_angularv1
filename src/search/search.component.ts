@@ -19,20 +19,23 @@ import { ProductService } from '../product/product.service';
 export class SearchComponent {
 
   badge: any;
+  productData :any;
   constructor(private productService: ProductService ){
    this.productService.cartValue$.subscribe(val => {
     this.badge = val;
    })
+   this.productService.cartProduct$.subscribe(val =>{
+    this.productData = val;
+   })
   }
   @Input() home = false;
-  // @Input() badge = 0;
-   @Input() data =[{}];
+ 
   dialog = inject(Dialog);
   
   openCartDialog(){
     this.dialog.open(CartoverlayComponent, {
       minWidth: '500px',
-      data: this.data,
+      data: this.productData,
     });
   }
 }

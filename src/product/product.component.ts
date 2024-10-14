@@ -22,9 +22,10 @@ import { BehaviorSubject } from 'rxjs';
 export class ProductComponent {
   selectedProduct: Tile | null = null;
  
+  cartProduct:any[] =[];
    productCount = 0;
    guest = true;
-  
+   
 
   constructor(private productService: ProductService, private router: Router) {}
 
@@ -35,13 +36,19 @@ export class ProductComponent {
     // Subscribe to selected product from the service
     this.productService.selectedProduct$.subscribe((product) => {
       this.selectedProduct = product;
+     
     });
   }
   addToBasket(product: Tile) {
-    this.productService.setSelectedProduct(product);
+    //this.productService.setCartProduct(product);
     this.productService.cartValue$.subscribe(value =>{
       this.productCount = value;
-    })
+    });
+    this.productService.cartProduct$.subscribe(value =>{
+      this.cartProduct = value;
+    });
+    this.cartProduct.push(product);
+    this.productService.cartProductSubject.next(this.cartProduct);
     this.productService.cartValueSubject.next(this.productCount +1);
   }
 }

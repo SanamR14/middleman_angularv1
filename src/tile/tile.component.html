@@ -29,7 +29,7 @@
           alt="{{ tile.product }}"
         />
         <mat-card-content>
-          <p (click)="addToBasket(tile)" style="cursor: pointer">
+          <p (click)="openProduct(tile)" style="cursor: pointer">
             <b>{{ tile.productName }}</b>
           </p>
           <div>
@@ -72,16 +72,16 @@
           alt="{{ tile.product }}"
         />
         <mat-card-content>
-          <p (click)="addToBasket(tile)" style="cursor: pointer">
+          <p (click)="openProduct(tile)" style="cursor: pointer">
             <b>{{ tile.productName }}</b>
           </p>
           <div>
             <h3>Price per Unit: Rs. {{ tile.price }} /-</h3>
           </div>
         </mat-card-content>
-        <!-- <mat-card-actions> 
+        <mat-card-actions> 
           <button mat-button (click)="addToBasket(tile)">Add to Basket</button>
-        </mat-card-actions> -->
+        </mat-card-actions>
       </mat-card>
     </div>
   </div>

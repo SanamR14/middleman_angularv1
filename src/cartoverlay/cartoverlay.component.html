@@ -1,0 +1,17 @@
+<div class="cartFlex">
+    <div class="row" *ngFor="let cart of cartData">
+        <!-- <div class="image">
+            <img  src="{{ cart.image }}"
+            alt="{{ cart.product }}"/>
+        </div> -->
+        <div class="product">
+            {{ cart.product }}
+            <div class="quantity">
+
+            </div>
+        </div>
+        <div class="price">
+            Rs. {{ cart.price }}/-
+        </div>
+    </div>
+</div>

@@ -38,14 +38,29 @@ export class TileComponent {
   @Input() featured = this.tiles;
 
   gridColumns = 3;
+  cartProduct:any[] =[];
+  productCount = 0;
   constructor(private productService: ProductService, private router: Router,private route: ActivatedRoute,){}
 
 
-  addToBasket(product: Tile) {
+  openProduct(product: Tile) {
    let productRoute = product.productName.trim();
     this.productService.setSelectedProduct(product);
     // this.router.navigate(['/',productRoute]);
     this.router.navigate(['productDetails'],{relativeTo:this.route})
+  }
+
+  addToBasket(product: Tile) {
+    //this.productService.setCartProduct(product);
+    this.productService.cartValue$.subscribe(value =>{
+      this.productCount = value;
+    });
+    this.productService.cartProduct$.subscribe(value =>{
+      this.cartProduct = value;
+    });
+    this.cartProduct.push(product);
+    this.productService.cartProductSubject.next(this.cartProduct);
+    this.productService.cartValueSubject.next(this.productCount +1);
   }
 
 }
