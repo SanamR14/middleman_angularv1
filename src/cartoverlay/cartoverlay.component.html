@@ -1,17 +1,23 @@
-<div class="cartFlex">
-    <div class="row" *ngFor="let cart of cartData">
-        <!-- <div class="image">
-            <img  src="{{ cart.image }}"
-            alt="{{ cart.product }}"/>
-        </div> -->
-        <div class="product">
-            {{ cart.product }}
-            <div class="quantity">
-
+<div class="cartBox">
+  <div class="cartHeader">Middleman Cart</div>
+  <div class="cartFlex" *ngIf="cartData.length > 0">
+    <div class="container" *ngFor="let cart of cartData">
+      <mat-card appearance="outlined" class="card">
+        <mat-card-content class="cardContent">
+            <div class="image">
+                <img [src]="cart.image" alt="{{ cart.productName }}" class="img"/>
             </div>
-        </div>
-        <div class="price">
-            Rs. {{ cart.price }}/-
-        </div>
+          <div class="product">
+            {{ cart.product }}
+            <div class="quantity"></div>
+          </div>
+          <div class="price">Rs. {{ cart.price }}/-</div>
+        </mat-card-content>
+      </mat-card>
     </div>
+  </div>
+
+  <div class="cart" *ngIf="cartData.length == 0">
+    <div class="cartBody">The cart is Empty</div>
+  </div>
 </div>

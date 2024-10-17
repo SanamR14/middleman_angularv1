@@ -33,9 +33,15 @@ mat-card {
   margin-right: 1rem;
 }
 .mdc-card__actions {
-justify-content: flex-end;
+  justify-content: flex-end;
 }
 .mat-mdc-card-content {
   padding: 0;
   margin: 6px 0 6px 6px;
+}
+mat-card-content {
+  // display: flex;
+  // justify-content: center;
+  margin: 2rem;
+  padding-bottom: 0px !important;
 }

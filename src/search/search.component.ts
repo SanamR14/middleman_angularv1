@@ -34,7 +34,8 @@ export class SearchComponent {
   
   openCartDialog(){
     this.dialog.open(CartoverlayComponent, {
-      minWidth: '500px',
+      minWidth: '700px',
+      height: '500px',
       data: this.productData,
     });
   }
